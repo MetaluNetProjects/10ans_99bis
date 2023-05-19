@@ -1,0 +1,39 @@
+#N canvas 1715 145 400 330 10;
+#X obj 140 61 loadbang;
+#X msg 139 86 1;
+#X obj 137 112 tgl 40 0 empty empty empty 17 7 0 10 -4034 -1 -1 1 1
+;
+#N canvas 380 257 450 300 Keyscan 1;
+#X obj 115 17 keyname;
+#X obj 117 45 pack f s;
+#X obj 44 122 route 1;
+#X obj 46 148 route F5 F6 F7 F8;
+#X obj 42 187 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 78 192 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 101 192 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 133 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 267 68 PdClient \$0 Keys;
+#X obj 118 72 s \$0-toserver;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 1 0 9 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 3 2 6 0;
+#X connect 3 3 7 0;
+#X restore 254 135 pd Keyscan;
+#X obj 137 162 metro 6000;
+#X msg 203 133 2000;
+#X msg 133 222 \; pd-Keyscan vis \$1;
+#X msg 138 189 0 \, 1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 4 0 7 0;
+#X connect 5 0 4 1;
+#X connect 7 0 6 0;

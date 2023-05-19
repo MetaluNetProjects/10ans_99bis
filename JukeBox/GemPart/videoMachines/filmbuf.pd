@@ -1,0 +1,8 @@
+#N canvas 1288 67 510 300 12;
+#X obj 30 15 inlet;
+#X obj 30 65 gemframebuffer;
+#X obj 125 95 outlet;
+#X obj 30 94 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 2 0;

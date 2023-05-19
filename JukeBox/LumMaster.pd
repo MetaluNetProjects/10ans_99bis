@@ -1,0 +1,13 @@
+#N canvas 254 229 301 467 10;
+#X obj 76 6 inlet;
+#X obj 77 189 outlet;
+#X obj 118 58 r \$1-LumMaster;
+#X obj 118 81 t b f;
+#X obj 76 164 change;
+#X obj 77 134 * 1;
+#X connect 0 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 3 1 5 1;
+#X connect 4 0 1 0;
+#X connect 5 0 4 0;
