@@ -1,4 +1,4 @@
-#N canvas 1239 95 755 581 12;
+#N canvas 975 49 755 581 12;
 #X declare -lib pmpd -path pmpd -path nusmuk-utils;
 #X obj 103 24 inlet;
 #X obj 103 79 separator;

@@ -1,4 +1,4 @@
-#N canvas 199 67 548 498 12;
+#N canvas 189 60 548 498 12;
 #X declare -path Fraise;
 #X declare -path nusmuk-utils;
 #X declare -path motex -path ggee -path maxlib -path zexy -lib zexy -path iemlib -lib iemlib -path hcs -path creb -lib creb -path cyclone -path moonlib;
@@ -148,6 +148,7 @@
 #X obj 32 317 Treuils/0treuils;
 #X msg 250 421 sudo shutdown now;
 #X obj 250 446 system;
+#X obj 298 257 Controles;
 #X connect 4 0 6 0;
 #X connect 5 0 9 0;
 #X connect 6 0 3 0;
