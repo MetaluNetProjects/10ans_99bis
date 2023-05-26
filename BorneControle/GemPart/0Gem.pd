@@ -1,4 +1,4 @@
-#N canvas 508 31 527 481 10;
+#N canvas 803 19 527 481 10;
 #X declare -path motex;
 #X declare -lib zexy;
 #X declare -path .. -path Gem -lib Gem -lib iemlib;
@@ -165,6 +165,9 @@
 #X obj 73 330 Diagramme/Diagramme;
 #X obj 39 148 t a a a a;
 #X obj 56 359 Playlist/Playlist;
+#X obj 331 251 r fromAudio;
+#X obj 331 274 route MODE;
+#X obj 331 297 s MODE;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
@@ -186,3 +189,5 @@
 #X connect 27 1 28 0;
 #X connect 27 2 26 0;
 #X connect 27 3 23 0;
+#X connect 29 0 30 0;
+#X connect 30 0 31 0;

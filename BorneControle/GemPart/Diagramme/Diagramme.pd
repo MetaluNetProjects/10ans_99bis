@@ -1,4 +1,4 @@
-#N canvas 897 33 948 680 12;
+#N canvas 803 258 1023 680 12;
 #X declare -path nusmuk-utils;
 #X obj 12 80 inlet;
 #X obj 12 130 separator;
@@ -150,6 +150,10 @@
 #X obj 330 270 once;
 #X obj 504 91 b;
 #X obj 504 116 del 4000;
+#X obj 134 22 r MODE;
+#X msg 134 72 1;
+#X msg 194 73 0;
+#X obj 134 47 route Diag;
 #X connect 0 0 58 0;
 #X connect 1 0 34 0;
 #X connect 2 0 4 0;
@@ -201,3 +205,8 @@
 #X connect 59 0 35 0;
 #X connect 60 0 61 0;
 #X connect 61 0 45 1;
+#X connect 62 0 65 0;
+#X connect 63 0 58 1;
+#X connect 64 0 58 1;
+#X connect 65 0 63 0;
+#X connect 65 1 64 0;

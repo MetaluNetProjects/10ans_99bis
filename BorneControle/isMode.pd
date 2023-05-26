@@ -1,0 +1,13 @@
+#N canvas 735 420 450 300 12;
+#X obj 141 11 r MODE;
+#X msg 141 61 1;
+#X msg 180 64 0;
+#X obj 141 36 sel \$1;
+#X obj 141 86 change;
+#X obj 141 111 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 3 1 2 0;
+#X connect 4 0 5 0;
