@@ -1,0 +1,4 @@
+#N canvas 1035 373 790 483 12;
+#X obj 74 25 r Commandes-manettes;
+#X obj 74 50 route 0 1, f 22;
+#X connect 0 0 1 0;

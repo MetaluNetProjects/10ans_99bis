@@ -1,0 +1,17 @@
+#N canvas 1359 27 450 300 12;
+#X obj 51 18 inlet;
+#X obj 146 13 inlet num;
+#X obj 51 43 list append \$1;
+#X obj 51 70 list append \$0-r;
+#X obj 51 95 s _drawPlan;
+#X obj 59 216 r \$0-r;
+#X obj 59 241 outlet;
+#X obj 225 114 text get imSize;
+#X obj 225 139 outlet;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 1 0 7 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
