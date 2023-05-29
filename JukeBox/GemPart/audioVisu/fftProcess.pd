@@ -98,7 +98,7 @@
 #X obj 260 469 hsl 153 18 0.001 1 1 0 empty empty empty -2 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 208 296 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
 #X obj 9 391 catch~ TuneAudio;
-#X obj 86 413 *~ 4;
+#X obj 10 429 *~ 2;
 #X connect 0 0 14 0;
 #X connect 1 0 3 0;
 #X connect 2 0 5 0;
@@ -167,9 +167,9 @@
 #X connect 58 0 23 0;
 #X restore 104 101 pd AUDIO_SRC;
 #X obj 22 24 declare -path iemlib -lib iemlib -path zexy -lib zexy;
-#N canvas 63 245 681 293 autogain 1;
+#N canvas 63 245 681 293 autogain 0;
 #X obj 57 31 inlet~;
-#N canvas 445 456 450 300 peak-divide 1;
+#N canvas 445 456 450 300 peak-divide 0;
 #X obj 176 30 inlet;
 #X obj 176 71 max;
 #X floatatom 58 126 5 0 0 0 - - - 0;

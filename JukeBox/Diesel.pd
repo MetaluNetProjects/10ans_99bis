@@ -4,7 +4,7 @@
 #X obj 212 175 cnv 15 200 100 empty empty fan 20 12 1 16 #e0e0e0 #fc2828 0;
 #X obj 12 175 cnv 15 200 100 empty empty engine 20 12 1 16 #e0e0e0 #fc2828 0;
 #X obj 12 13 cnv 15 400 60 empty empty Delux-machine-o-matic 20 12 1 18 #e0e0e0 #3c50fc 0;
-#X obj 182 143 tgl 22 1 \$0-motor-mute empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 182 143 tgl 22 1 \$0-motor-mute empty empty 0 -6 0 8 #fcfcfc #000000 #000000 1 1;
 #X obj 179 241 tgl 22 1 \$0-engine-mute empty empty 0 -6 0 8 #fcfcfc #000000 #000000 1 1;
 #X obj 361 144 tgl 22 1 \$0-throb-mute empty empty 0 -6 0 8 #fcfcfc #000000 #000000 1 1;
 #X obj 240 115 hsl 100 12 0 1 0 1 \$0-throb-rattle \$0-throb-rattle-r rattle 35 6 1 8 #fcfcfc #000000 #000000 2000 1;
@@ -29,7 +29,7 @@
 #X obj 247 254 hsl 100 12 0 1 0 1 \$0-fan-volume \$0-fan-volume-r volume 35 6 1 8 #fcfcfc #000000 #000000 7400 1;
 #X obj 247 230 hsl 100 12 0 1 0 1 \$0-fan-blade1 \$0-fan-blade1-r blade1 35 6 1 8 #fcfcfc #000000 #000000 7000 1;
 #X obj 247 242 hsl 100 12 0 1 0 1 \$0-fan-blade2 \$0-fan-blade2-r blade2 35 6 1 8 #fcfcfc #000000 #000000 6400 1;
-#X obj 35 45 hsl 128 15 0 1 0 1 \$0-dmom-speed \$0-dmom-speed-r masterspeed 33 7 1 8 #fcfcfc #000000 #000000 8381 1;
+#X obj 35 45 hsl 128 15 0 1 0 1 \$0-dmom-speed \$0-dmom-speed-r masterspeed 33 7 1 8 #fcfcfc #000000 #000000 12617 1;
 #X obj 35 60 hsl 128 15 0 1 0 1 \$0-dmom-inertia \$0-dmom-inertia-r inertia 33 7 1 8 #fcfcfc #000000 #000000 8099 1;
 #X symbolatom 236 50 20 0 0 0 - \$0-patchname - 0;
 #X obj 186 50 nbx 5 14 0 8 0 0 \$0-patchselect empty patch 0 -6 1 8 #fcfcfc #000000 #000000 0 256;
@@ -1238,7 +1238,7 @@
 #X obj 178 486 *~;
 #X obj 348 507 lop~ 10;
 #X obj 349 444 r \$0-freq;
-#N canvas 299 299 726 531 boom 1;
+#N canvas 299 299 726 531 boom 0;
 #X obj 92 17 inlet~;
 #X obj 120 373 outlet~;
 #X obj 264 137 osc~ 80;
@@ -2386,7 +2386,6 @@
 #X obj 865 253 b;
 #X obj 838 143 r \$1-Diesel-start;
 #X obj 838 166 sel 0;
-#X obj 31 541 lout \$0 \$1 4;
 #X obj 190 363 hip~ 50;
 #X obj 122 374 hip~ 20;
 #X obj 455 219 / 20;
@@ -2395,7 +2394,8 @@
 #X obj 816 50 r \$1-MachinesMaster-snd;
 #X obj 766 75 * 1;
 #X floatatom 869 100 5 0 0 0 - - - 0;
-#X connect 34 0 169 0;
+#X obj 31 541 lout \$0 \$1 1;
+#X connect 34 0 168 0;
 #X connect 35 0 159 0;
 #X connect 36 0 68 0;
 #X connect 37 0 34 0;
@@ -2415,7 +2415,7 @@
 #X connect 52 0 53 0;
 #X connect 52 0 155 0;
 #X connect 53 0 46 0;
-#X connect 54 0 171 0;
+#X connect 54 0 170 0;
 #X connect 56 0 59 0;
 #X connect 57 0 61 0;
 #X connect 57 1 61 1;
@@ -2457,7 +2457,7 @@
 #X connect 90 0 87 0;
 #X connect 91 0 157 0;
 #X connect 91 1 157 0;
-#X connect 91 1 167 0;
+#X connect 91 1 175 0;
 #X connect 93 0 92 0;
 #X connect 94 0 95 0;
 #X connect 95 0 93 0;
@@ -2508,6 +2508,7 @@
 #X connect 137 0 102 0;
 #X connect 138 0 37 0;
 #X connect 139 0 157 0;
+#X connect 139 0 175 0;
 #X connect 141 0 142 0;
 #X connect 141 1 145 0;
 #X connect 142 0 145 0;
@@ -2515,7 +2516,7 @@
 #X connect 143 0 140 0;
 #X connect 145 0 144 0;
 #X connect 147 0 57 0;
-#X connect 148 0 174 0;
+#X connect 148 0 173 0;
 #X connect 150 0 148 0;
 #X connect 151 0 152 0;
 #X connect 152 0 74 0;
@@ -2525,17 +2526,17 @@
 #X connect 156 0 154 0;
 #X connect 158 0 9 0;
 #X connect 158 0 21 0;
-#X connect 159 0 168 0;
+#X connect 159 0 167 0;
 #X connect 160 0 104 0;
 #X connect 161 0 131 0;
 #X connect 162 0 164 0;
 #X connect 163 0 161 0;
 #X connect 165 0 166 0;
 #X connect 166 0 163 0;
-#X connect 168 0 68 0;
-#X connect 169 0 139 0;
-#X connect 171 0 65 0;
-#X connect 172 0 174 0;
-#X connect 172 1 174 1;
-#X connect 173 0 172 0;
-#X connect 174 0 149 0;
+#X connect 167 0 68 0;
+#X connect 168 0 139 0;
+#X connect 170 0 65 0;
+#X connect 171 0 173 0;
+#X connect 171 1 173 1;
+#X connect 172 0 171 0;
+#X connect 173 0 149 0;
