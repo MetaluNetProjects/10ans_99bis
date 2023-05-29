@@ -1,4 +1,4 @@
-#N canvas 322 309 1066 680 12;
+#N canvas 224 116 1066 680 12;
 #X declare -path nusmuk-utils;
 #X obj 12 80 inlet;
 #X obj 12 130 separator;
@@ -22,7 +22,7 @@
 #X obj 142 182 separator;
 #X obj 12 182 colorRGB 1 1 1 1;
 #X obj 17 482 jauge Tank -3.5 1.49;
-#X obj 495 188 text define -k jaugesLabels;
+#X obj 247 441 text define -k jaugesLabels;
 #A set Tank 0 1/4 1/2 3/4 1 \; Tr/min 0 20 60 100 140 180 220 260 300 \; Amperes 0 8 16 32 64 128 256 512 1024 \; Pression 0 5 10 15 20 25 30 35 40 \;;
 #X obj 165 482 jauge Tr/min -2.5 1.49;
 #X obj 330 482 jauge Amperes -1.5 1.49;
@@ -159,8 +159,8 @@
 #X obj 631 305 r Diagramme-couleur;
 #X obj 631 330 route 0;
 #X obj 631 355 unpack f f f;
-#X obj 738 63 s Diagramme-couleur;
-#X msg 719 99 0 0 0 0 \, 1 0 0.75 0 \, 2 0.75 0.75 0;
+#X obj 737 62 s Diagramme-couleur;
+#X msg 719 102 0 0 0 0 \, 1 0 0.75 0 \, 2 0.75 0.75 0;
 #X obj 86 346 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X msg 722 193 0 0.5 0.5 0.5 \, 1 0 0 0 \, 2 0 0.75 0;
 #X obj 77 444 rectangle 1.8 1;
@@ -169,6 +169,11 @@
 #X obj 738 10 loadbang;
 #X msg 737 35 0 0 0 0 \, 1 0.7 1 1 \, 2 0 0.5 0;
 #X obj 78 417 blur/blur;
+#X obj 502 156 r Mannettes-enable;
+#X obj 879 335 s Mannettes-enable;
+#X obj 879 307 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
+#X obj 879 255 r fromAudio;
+#X obj 879 280 route Mannettes-enable;
 #X connect 0 0 57 0;
 #X connect 1 0 34 0;
 #X connect 2 0 4 0;
@@ -242,3 +247,7 @@
 #X connect 78 0 79 0;
 #X connect 79 0 71 0;
 #X connect 80 0 75 0;
+#X connect 81 0 46 0;
+#X connect 83 0 82 0;
+#X connect 84 0 85 0;
+#X connect 85 0 83 0;
