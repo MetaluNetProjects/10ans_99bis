@@ -2407,7 +2407,7 @@
 #X obj 223 19 fruit/fruit 1 Panneau2 11 Panneau;
 #X obj 434 18 fruit/fruit 1 Comm 12 Commandes 1;
 #X restore 116 104 pd Interfaces;
-#N canvas 210 376 479 620 Master 1;
+#N canvas 210 376 479 620 Master 0;
 #X obj 102 120 vsl 15 120 0 1 0 1 \$0-Master-snd \$0-Master-rcv empty 0 -9 0 10 #fc0400 #000000 #000000 6302 1;
 #X obj 216 120 vu 15 120 \$0-vu6 empty -1 -8 0 10 #404040 #000000 1 0;
 #X obj 178 120 vu 15 120 \$0-vu4 empty -1 -8 0 10 #404040 #000000 0 0;
@@ -2719,7 +2719,7 @@
 #X obj 41 20 pied/pied 0 12346;
 #X obj 216 315 GemPart/audioVisu/fftProcess;
 #X obj 42 336 loadbang;
-#N canvas 483 248 812 300 network 1;
+#N canvas 483 248 812 300 network 0;
 #X obj 176 34 loadbang;
 #X msg 176 57 connect localhost 23477;
 #X obj 176 117 netsend -u;
