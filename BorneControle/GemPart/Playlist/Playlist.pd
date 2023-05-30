@@ -16,10 +16,10 @@
 #X msg 199 386 w \$1;
 #X msg 255 380 h \$1;
 #X obj 17 152 translateXYZ 0 0 -4;
-#X obj 565 110 ../../TUNES;
-#X obj 564 85 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 566 134 ../../TUNES;
+#X obj 565 109 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X obj 565 58 loadbang;
-#X obj 565 135 s \$0-tunes;
+#X obj 566 159 s \$0-tunes;
 #X obj 164 275 * 360;
 #X floatatom 104 196 5 0 0 0 - - - 0;
 #X obj 164 221 line;
@@ -43,12 +43,13 @@
 #X obj 403 163 s \$0-goto;
 #X obj 403 132 +;
 #X obj 434 132 i;
-#X obj 485 161 mod 42;
-#X msg 485 242 selectedtune \$1;
-#X obj 485 267 s toAudio;
-#X obj 485 214 list store;
-#X msg 485 186 get \$1;
-#X obj 552 188 r \$0-tunes;
+#X obj 488 212 mod 42;
+#X msg 488 293 selectedtune \$1;
+#X obj 488 318 s toAudio;
+#X obj 488 265 list store;
+#X msg 488 237 get \$1;
+#X obj 555 239 r \$0-tunes;
+#X obj 565 84 del 5000;
 #X connect 0 0 2 0;
 #X connect 1 0 15 0;
 #X connect 2 0 1 0;
@@ -67,7 +68,7 @@
 #X connect 16 0 19 0;
 #X connect 16 1 43 1;
 #X connect 17 0 16 0;
-#X connect 18 0 17 0;
+#X connect 18 0 49 0;
 #X connect 20 0 30 0;
 #X connect 21 0 5 1;
 #X connect 22 0 25 0;
@@ -97,3 +98,4 @@
 #X connect 46 0 44 0;
 #X connect 47 0 46 0;
 #X connect 48 0 46 1;
+#X connect 49 0 17 0;
