@@ -1,0 +1,47 @@
+#N canvas 0 94 450 584 12;
+#X obj 21 37 fruit/fruit 1 DMX1 10 dmxFW;
+#X obj 39 388 fruit/send2 DMX1;
+#X msg 39 360 c 30 i \$1 c \$2;
+#X obj 32 121 vsl 15 128 0 255 0 0 empty empty pan 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 32 257 1 \$1;
+#X obj 75 120 vsl 15 128 0 255 0 0 empty empty tilt 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 75 256 2 \$1;
+#X obj 119 121 vsl 15 128 0 255 0 0 empty empty slow 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 119 257 3 \$1;
+#X obj 163 121 vsl 15 128 0 255 0 0 empty empty color 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 206 120 vsl 15 128 0 255 0 0 empty empty gobo 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 250 121 vsl 15 128 0 255 0 0 empty empty dimm 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 163 257 4 \$1;
+#X msg 206 256 5 \$1;
+#X msg 251 257 6 \$1;
+#X obj 292 120 vsl 15 128 0 255 0 0 empty empty shutter 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 386 121 vsl 15 128 0 255 0 0 empty empty func 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 292 256 7 \$1;
+#X msg 387 257 8 \$1;
+#X obj 241 322 r 2DMX;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X connect 7 0 8 0;
+#X connect 8 0 2 0;
+#X connect 9 0 12 0;
+#X connect 10 0 13 0;
+#X connect 11 0 14 0;
+#X connect 12 0 2 0;
+#X connect 13 0 2 0;
+#X connect 14 0 2 0;
+#X connect 15 0 17 0;
+#X connect 16 0 18 0;
+#X connect 17 0 2 0;
+#X connect 18 0 2 0;
+#X connect 19 0 2 0;

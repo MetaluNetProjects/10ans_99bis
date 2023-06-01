@@ -1,0 +1,13 @@
+8X2A : 
+- motor D (P2A)
+- incrA : K1
+- incrB : K2
+- zero : K3
+
+- servo1 : K4
+- servo2 : K5
+
+- LED1 : K6(P3B)
+- LED2 : K7(CCP4)
+- LED3 : K8(P1C)
+
