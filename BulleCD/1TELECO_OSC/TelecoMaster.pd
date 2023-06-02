@@ -1,11 +1,12 @@
-#N canvas 1982 719 646 388 10;
+#N canvas 1992 719 646 388 10;
 #X declare -path Fraise;
 #X obj 33 30 netreceive -u -b 18080;
 #X obj 33 50 oscparse;
 #X obj 32 277 netsend -u -b;
 #X obj 67 220 loadbang;
 #X msg 67 241 connect localhost 8080;
-#X obj 32 305 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 32 305 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
 #X obj 32 179 list prepend send;
 #X obj 32 200 list trim;
 #X obj 32 158 oscformat SET;
@@ -23,13 +24,17 @@
 #X obj 199 341 s toTeleco;
 #X obj 404 228 s toTeleco;
 #X obj 515 315 r fromTeleco;
-#X obj 515 365 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
-#X obj 622 373 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 515 365 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 622 373 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X obj 199 320 list trim;
 #X obj 199 299 list prepend SceneTitle;
-#X obj 651 372 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 651 372 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X obj 605 242 s toTeleco;
-#X obj 608 89 hsl 128 15 10 13.6 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 608 89 hsl 128 15 10 13.6 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
 #X obj 605 132 * 10;
 #X obj 605 153 i;
 #X obj 605 174 / 10;
@@ -48,8 +53,10 @@
 #N canvas 121 521 796 480 test_param_radio 0;
 #X obj 25 194 l2s;
 #X obj 25 245 s toTelecoDirect;
-#X obj 254 246 hradio 15 1 0 8 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
-#X obj 382 243 hradio 15 1 0 8 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
+#X obj 254 246 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 382 243 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
 #X msg 252 267 param_radio/val \$1;
 #X msg 382 290 param_radio/n \$1;
 #X msg 279 213 param_radio_b_1/text Hello;
@@ -57,31 +64,36 @@
 #X msg 58 168 Hello;
 #X obj 304 329 s toTeleco;
 #X obj 139 114 oscformat param_radio/vis;
-#X obj 141 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 141 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X obj 382 266 + 1;
 #X obj 24 220 oscformat param_radio_b5/text;
 #X obj 45 362 l2s;
 #X obj 45 413 s toTelecoDirect;
 #X msg 47 336 Hey;
 #X msg 78 336 Hello;
-#X obj 248 353 hradio 15 1 0 8 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
+#X obj 248 353 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
 #X obj 251 421 s toTeleco;
 #X msg 245 398 radio1/n \$1;
 #X obj 246 375 + 1;
 #X obj 44 388 oscformat radio1_b0/text;
-#X obj 396 350 hradio 15 1 0 8 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
+#X obj 396 350 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
 #X obj 394 372 + 1;
 #X msg 393 395 radio2/n \$1;
-#X obj 416 102 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 416 102 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X obj 314 129 oscformat radio1/vis;
-#X obj 551 101 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 551 101 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X obj 449 128 oscformat radio2/vis;
-#X floatatom 572 346 5 0 0 0 - - - 0;
+#X floatatom 572 346 5 0 0 0 - - -;
 #X obj 572 284 r fromTeleco;
 #X obj 572 306 route param_radio;
 #X obj 525 310 print;
 #X obj 572 326 route t;
-#X floatatom 697 298 5 0 0 0 - - - 0;
+#X floatatom 697 298 5 0 0 0 - - -;
 #X obj 639 334 makefilename %d;
 #X connect 0 0 13 0;
 #X connect 2 0 4 0;
@@ -114,7 +126,8 @@
 #X connect 35 0 36 0;
 #X connect 36 0 34 1;
 #X restore 776 130 pd test_param_radio;
-#X obj 404 289 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 404 289 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
 #X msg 401 316 fader_master \$1;
 #N canvas 1 82 941 436 test_faders 0;
 #X obj 95 233 s toTeleco;
@@ -126,7 +139,8 @@
 #X obj 95 119 list fromsymbol;
 #X obj 95 167 list tosymbol;
 #X msg 225 38 97 10 99;
-#X msg 135 64 Alors\\\, c'est un texte assez longue pour voir comment l'objet texte de O-S-C se comporte dans ce cas.;
+#X msg 135 64 Alors\\\, c'est un texte assez longue pour voir comment
+l'objet texte de O-S-C se comporte dans ce cas.;
 #X msg 174 39 a#b;
 #N canvas 1 81 450 300 replace#bynewline 0;
 #X obj 75 18 inlet;
@@ -156,17 +170,21 @@
 #X connect 9 0 1 0;
 #X connect 10 0 7 0;
 #X restore 95 141 pd replace#bynewline;
-#X obj 501 218 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 578 242 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 501 218 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 578 242 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
 #X msg 575 268 fader_1/meter \$1;
-#X obj 740 310 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 740 310 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X obj 599 317 s toTeleco;
 #X obj 436 146 oscformat fader_1/text;
 #X obj 204 322 s 2TelecoControls;
 #X obj 740 352 s toTelecoDirect;
 #X msg 498 244 fader1 \$1;
 #X obj 740 331 oscformat fader1/vis;
-#X obj 334 219 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 334 219 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
 #X msg 331 246 fader_master \$1;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
@@ -189,15 +207,17 @@
 #X connect 23 0 16 0;
 #X restore 777 105 pd test_faders;
 #N canvas 1 82 569 342 tests-batts 0;
-#X floatatom 91 27 5 0 0 0 - - - 0;
+#X floatatom 91 27 5 0 0 0 - - -;
 #X obj 91 68 i;
 #X msg 91 136 symbol \$1V;
 #X obj 91 91 change;
 #X msg 371 126 symbol coucou;
 #X msg 365 164 matrix_1/1/text_2 \$1;
-#X obj 225 135 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 225 135 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
 #X msg 243 109 1;
-#X obj 58 31 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 58 31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X msg 222 158 battsvar_3 \$1;
 #X obj 91 47 * 100;
 #X obj 91 115 / 100;
@@ -218,7 +238,7 @@
 #X connect 12 0 13 0;
 #X restore 776 80 pd tests-batts;
 #X obj 515 336 route Zero fader_1 Prev Next Confirm fader_master;
-#X floatatom 773 381 5 0 0 0 - - - 0;
+#X floatatom 773 381 5 0 0 0 - - -;
 #X obj 401 265 r setCigalesMasterPressure;
 #X obj 766 405 s CigalesMasterPressure;
 #X obj 401 339 s toTeleco;
@@ -231,7 +251,8 @@
 #X obj 36 385 r SceneText;
 #X obj 36 465 list fromsymbol;
 #X obj 36 513 list tosymbol;
-#X msg 50 409 Alors\\\, c'est un texte assez longue pour voir comment l'objet texte de O-S-C se comporte dans ce cas.;
+#X msg 50 409 Alors\\\, c'est un texte assez longue pour voir comment
+l'objet texte de O-S-C se comporte dans ce cas.;
 #N canvas 1 81 450 300 replace#bynewline 0;
 #X obj 75 18 inlet;
 #X obj 75 226 outlet;
@@ -267,7 +288,7 @@
 #X msg 235 232 symbol \$1:;
 #X obj 235 211 r currentSceneNum;
 #X obj 219 464 r fromTeleco;
-#X floatatom 180 554 5 0 0 0 - - - 0;
+#X floatatom 180 554 5 0 0 0 - - -;
 #X obj 219 506 * 15;
 #X obj 219 551 change;
 #X msg 219 651 0 prop lampNoteAmp \$1;
@@ -286,7 +307,8 @@
 #X msg 376 610 0 prop lampRndAmp \$1;
 #X msg 454 583 0 prop lampRndSpeed \$1;
 #X obj 519 539 s SHUTDOWN_CIGALES;
-#X obj 527 517 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 527 517 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #N canvas 1 82 1167 578 EditCigale 0;
 #X obj 49 20 r fromTeleco;
 #X msg 49 143 EditCigaleDialog 1;
@@ -301,7 +323,8 @@
 #X obj 476 241 t b b;
 #X msg 517 241 0;
 #X obj 476 262 f;
-#X msg 476 283 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 \, from \$1 2;
+#X msg 476 283 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 \, from \$1 2;
 #X obj 476 316 s toCigalesChannels;
 #X msg 375 286 2 prop open \$1;
 #X obj 375 307 s toOutChan;
@@ -325,7 +348,8 @@
 #X obj 680 205 f;
 #X msg 680 226 c 66 c 255 c 100 c \$1 c 255 c 255;
 #X obj 675 171 b;
-#X obj 452 75 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 452 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X msg 106 257 editCigale 1;
 #X obj 34 389 r cigaleOffset1;
 #X obj 976 98 r cigaleOffset2;
@@ -340,7 +364,8 @@
 #X obj 61 458 del 500;
 #X msg 61 479 1;
 #X obj 87 479 f;
-#X obj 642 355 route cigaleOffsetPressure cigaleOffsetOpen editCigaleSave, f 59;
+#X obj 642 355 route cigaleOffsetPressure cigaleOffsetOpen editCigaleSave
+, f 59;
 #X obj 198 417 route cigaleOffsetPressure;
 #X obj 454 412 r editCigale-num;
 #X obj 400 413 route 0;
@@ -367,7 +392,8 @@
 #X obj 564 420 route cigaleOffsetOpen editCigaleSave;
 #X obj 787 513 fruit/send2 CigaleMaster;
 #X obj 787 452 b;
-#X obj 49 43 route editCigale cigaleNote cigalePressure cigaleOpen editCigaleShutdownConfirm EditCigaleDialog, f 102;
+#X obj 49 43 route editCigale cigaleNote cigalePressure cigaleOpen
+editCigaleShutdownConfirm EditCigaleDialog, f 102;
 #X obj 556 71 sel 0;
 #X msg 556 96 editCigale none;
 #X obj 49 68 route none;
@@ -459,7 +485,8 @@
 #X connect 82 1 2 0;
 #X connect 82 1 4 0;
 #X restore 711 543 pd EditCigale;
-#X obj 219 485 route lamp_play lamp_const lamp_rnd lamp_speed shutdown_confirm opening, f 71;
+#X obj 219 485 route lamp_play lamp_const lamp_rnd lamp_speed shutdown_confirm
+opening, f 71;
 #X obj 644 588 change;
 #X obj 644 565 i;
 #X obj 644 543 * 255;
@@ -475,7 +502,7 @@
 #X obj 342 78 * 100;
 #X obj 322 165 i;
 #X obj 322 53 inlet V*100;
-#X floatatom 362 155 5 0 0 0 - - - 0;
+#X floatatom 362 155 5 0 0 0 - - -;
 #X obj 322 143 + 0.7;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
@@ -487,8 +514,9 @@
 #X restore 473 140 pd toPercent;
 #X msg 475 227 batt_matrix/\$1 \$2V;
 #X msg 248 137 1 \$1;
-#X obj 251 75 hsl 128 15 3.1 4.1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
-#X floatatom 248 95 5 0 0 0 - - - 0;
+#X obj 251 75 hsl 128 15 3.1 4.1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 248 95 5 0 0 0 - - -;
 #X msg 404 206 batt_matrix/\$1 \$2%;
 #X obj 248 116 * 100;
 #X obj 605 64 r RPI_BATT;
@@ -508,7 +536,8 @@
 #N canvas 1316 127 389 344 1->all 0;
 #X obj 231 139 OnetoAll lumiere1;
 #X obj 224 164 OnetoAll lumiere2;
-#X obj 82 108 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 82 108 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X obj 82 25 r fromTeleco;
 #X obj 50 208 OnetoAll pantilt;
 #X obj 43 233 OnetoAll rotation;
@@ -516,7 +545,8 @@
 #X obj 192 210 OnetoAll mode2 1;
 #X obj 180 232 OnetoAll mode3 1;
 #X obj 82 48 route ALL_MOT ALL_LUM;
-#X obj 143 105 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 143 105 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X connect 2 0 4 0;
 #X connect 2 0 5 0;
 #X connect 3 0 9 0;
@@ -535,7 +565,8 @@
 #X msg 89 164 0;
 #X msg 101 119 stop;
 #X obj 89 187 change;
-#X obj 89 214 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 89 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X obj 89 141 del 200;
 #X obj 238 63 r fromTeleco;
 #X obj 238 86 route lumiere;
@@ -548,7 +579,8 @@
 #X msg 238 229 \$2L\$1 \$3 0.2;
 #X obj 89 237 t f f f;
 #X obj 108 262 metro 100;
-#X obj 89 316 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 89 316 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X obj 128 287 sel 1;
 #X msg 128 310 set 0;
 #X obj 66 266 sel 0;
@@ -592,7 +624,8 @@
 #X obj 1044 250 presets_teleco lum PRESETS_LUM 32;
 #N canvas 2040 540 807 417 lumG 0;
 #X obj 78 39 r fromTeleco;
-#X obj 558 293 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 558 293 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X obj 558 341 s CONTROL_LUM;
 #X msg 558 313 GMute \$1;
 #X obj 78 65 route Vlum LumG_Mute;
@@ -613,10 +646,14 @@
 #X obj 361 120 r LUMG-toMachine;
 #X obj 616 167 s LUMG-PLAYED_CONTROL;
 #X obj 300 58 apsubmaster LUMG-PRESETS_LUMG PRESETS_LUMG LumG;
-#X obj 84 258 param_f LUMG mode1 LUMG-PRESETS_LUM LUMG-PRESETS_LUMG LUMG-Vlum, f 64;
-#X obj 84 282 param_f LUMG mode2 LUMG-PRESETS_LUM LUMG-PRESETS_LUMG LUMG-Vlum, f 64;
-#X obj 84 306 param_f LUMG mode3 LUMG-PRESETS_LUM LUMG-PRESETS_LUMG LUMG-Vlum, f 64;
-#X obj 84 328 param_f LUMG mode4 LUMG-PRESETS_LUM LUMG-PRESETS_LUMG LUMG-Vlum, f 64;
+#X obj 84 258 param_f LUMG mode1 LUMG-PRESETS_LUM LUMG-PRESETS_LUMG
+LUMG-Vlum, f 64;
+#X obj 84 282 param_f LUMG mode2 LUMG-PRESETS_LUM LUMG-PRESETS_LUMG
+LUMG-Vlum, f 64;
+#X obj 84 306 param_f LUMG mode3 LUMG-PRESETS_LUM LUMG-PRESETS_LUMG
+LUMG-Vlum, f 64;
+#X obj 84 328 param_f LUMG mode4 LUMG-PRESETS_LUM LUMG-PRESETS_LUMG
+LUMG-Vlum, f 64;
 #X obj 479 177 list trim;
 #X obj 479 150 list prepend LumG;
 #X obj 479 123 r LUMG-toRecord;
@@ -649,7 +686,7 @@
 #X msg 1428 444 time_mot \$1;
 #X obj 1428 468 s toTeleco;
 #X obj 1428 420 route time_final time_text_final;
-#X symbolatom 1551 360 10 0 0 0 - - - 0;
+#X symbolatom 1551 360 10 0 0 0 - - -;
 #X obj 1522 446 symbol;
 #X msg 1521 470 time_text_mot \$1;
 #X obj 1049 420 rem CONTROLrecorder_teleco mot;
@@ -765,27 +802,32 @@
 #X obj 220 74 r fromTeleco;
 #X obj 220 97 spigot;
 #X obj 220 120 print;
-#X obj 271 103 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 271 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X obj 380 232 DMX DMX;
 #N canvas 2051 631 802 567 fader_test 0;
 #X obj 146 133 r fromTeleco;
 #X obj 146 156 route fader_test;
-#X floatatom 146 179 5 0 0 0 - - - 0;
-#X obj 144 259 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 146 179 5 0 0 0 - - -;
+#X obj 144 259 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
 #X msg 141 279 fader_test \$1;
 #X obj 141 302 s toTeleco;
 #X obj 270 353 oscformat fader_test;
 #X obj 269 380 s toTelecoDirect;
-#X obj 279 325 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 495 268 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 279 325 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 495 268 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
 #X obj 491 372 s toTelecoDirect;
 #X obj 492 345 oscformat testadd;
 #X msg 492 288 list fader_test \$1;
 #X obj 281 94 r fromTeleco;
 #X obj 281 153 route fader_test;
-#X floatatom 281 176 5 0 0 0 - - - 0;
+#X floatatom 281 176 5 0 0 0 - - -;
 #X obj 281 123 route testadd;
-#X obj 537 78 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 537 78 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
 #X obj 533 182 s toTelecoDirect;
 #X obj 534 155 oscformat testadd;
 #X msg 534 98 list xy \$1 \$1;
@@ -807,9 +849,10 @@
 #X restore 558 16 pd fader_test;
 #X obj 22 336 CONTROLrecorder_teleco final transport;
 #X obj 316 51 s RELOAD_PRESETS;
-#X obj 316 24 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
-#N canvas 2656 567 450 377 IN 1;
-#X obj 250 111 r IN_ENV;
+#X obj 316 24 bng 18 250 50 0 empty empty empty 0 -9 0 10 -262144 -1
+-1;
+#N canvas 2552 567 450 377 IN 0;
+#X obj 250 69 r IN_ENV;
 #X obj 54 73 r IN_BEATMS;
 #X obj 133 258 change;
 #X msg 28 117 Beat 1;
@@ -820,14 +863,14 @@
 #X obj 133 162 /;
 #X msg 133 139 60000 \$1;
 #X msg 133 281 text_BPM \$1;
-#X obj 250 157 i;
-#X obj 250 180 change;
-#X obj 250 134 * 2;
-#X obj 250 203 / 2;
-#X obj 250 227 / 100;
+#X obj 250 115 i;
+#X obj 250 138 change;
+#X obj 250 92 * 2;
+#X obj 250 161 / 2;
 #X msg 250 280 In_vu \$1;
 #X obj 250 253 pow 3;
-#X floatatom 320 276 5 0 0 0 - - - 0;
+#X floatatom 320 276 5 0 0 0 - - -;
+#X obj 250 226 / 90;
 #X connect 0 0 13 0;
 #X connect 1 0 3 0;
 #X connect 1 0 9 0;
@@ -842,10 +885,10 @@
 #X connect 11 0 12 0;
 #X connect 12 0 14 0;
 #X connect 13 0 11 0;
-#X connect 14 0 15 0;
-#X connect 15 0 17 0;
-#X connect 16 0 4 0;
-#X connect 17 0 16 0;
+#X connect 14 0 18 0;
+#X connect 15 0 4 0;
+#X connect 16 0 15 0;
+#X connect 18 0 16 0;
 #X restore 442 142 pd IN;
 #X connect 0 0 1 0;
 #X connect 1 0 10 0;
