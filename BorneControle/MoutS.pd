@@ -1,4 +1,4 @@
-#N canvas 796 568 320 340 10;
+#N canvas 786 303 320 340 10;
 #X obj 13 -1 catch~ \$1-out\$2;
 #X obj 18 292 dac~ \$2;
 #X obj 93 269 prvu~;
@@ -17,6 +17,7 @@
 #X obj 161 36 lp4_butt~ 90;
 #X obj 16 35 hip~ 50;
 #X obj 161 68 *~ 0.8;
+#X obj 176 141 switch~;
 #X connect 0 0 16 0;
 #X connect 0 0 15 0;
 #X connect 2 0 8 0;
