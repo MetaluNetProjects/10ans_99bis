@@ -1,26 +1,19 @@
-#N canvas 53 81 903 662 10;
-#X obj 37 70 tgl 15 0 treuil\$1-connected treuil\$1-connected connecté
-17 7 0 10 -262144 -1 -1 1 1;
-#X obj 371 151 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X obj 37 87 tgl 15 0 treuil\$1-lowswitch treuil\$1-lowswitch au_départ
-17 7 0 10 -262144 -1 -1 1 1;
-#X floatatom 458 552 5 0 0 0 - - -;
+#N canvas 43 14 903 659 10;
+#X obj 37 70 tgl 15 0 treuil\$1-connected treuil\$1-connected connecté 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 371 151 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 37 87 tgl 15 0 treuil\$1-lowswitch treuil\$1-lowswitch au_départ 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 458 552 5 0 0 0 - - - 0;
 #X msg 421 652 dest \$1;
 #X obj 371 128 route present;
 #X obj 271 379 route 10;
-#X obj 166 61 nbx 6 14 -1e+37 1e+37 0 0 treuil\$1-pos treuil\$1-pos
-position 0 -6 0 10 -262144 -1 -1 0 256;
+#X obj 166 61 nbx 6 14 -1e+37 1e+37 0 0 treuil\$1-pos treuil\$1-pos position 0 -6 0 10 #fcfcfc #000000 #000000 0 256;
 #X msg 160 642 WRITE;
 #X text 158 628 eeprom;
-#X obj 166 89 nbx 5 14 -1e+37 1e+37 0 0 treuil\$1-dest treuil\$1-dest
-destination 0 -6 0 10 -262144 -1 -1 0 256;
+#X obj 166 89 nbx 5 14 -1e+37 1e+37 0 0 treuil\$1-dest treuil\$1-dest destination 0 -6 0 10 #fcfcfc #000000 #000000 0 256;
 #X msg 31 615 c 120 c 4 i \$1;
-#X floatatom 31 591 5 0 0 0 - - -;
-#X obj 556 149 nbx 5 14 -1e+37 1e+37 0 0 treuil\$1-ramppos treuil\$1-ramppos
-ramp_position 0 -6 0 10 -262144 -1 -1 0 256;
-#X obj 109 77 nbx 5 14 -1e+37 1e+37 0 0 treuil\$1-pwm treuil\$1-pwm
-PWM 0 -6 0 10 -262144 -1 -1 0 256;
+#X floatatom 31 591 5 0 0 0 - - - 0;
+#X obj 556 149 nbx 5 14 -1e+37 1e+37 0 0 treuil\$1-ramppos treuil\$1-ramppos ramp_position 0 -6 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 109 77 nbx 5 14 -1e+37 1e+37 0 0 treuil\$1-pwm treuil\$1-pwm PWM 0 -6 0 10 #fcfcfc #000000 #000000 0 256;
 #N canvas 269 454 303 236 16bits 0;
 #X obj 80 43 * 256;
 #X obj 80 64 +, f 9;
@@ -53,8 +46,7 @@ PWM 0 -6 0 10 -262144 -1 -1 0 256;
 #X connect 5 1 6 0;
 #X connect 6 0 2 0;
 #X restore 538 426 pd 16bits;
-#X obj 35 565 hsl 128 15 -1023 1023 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 0 1;
+#X obj 35 565 hsl 128 15 -1023 1023 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 34 541 0;
 #X obj 480 138 print;
 #N canvas 269 454 303 236 16bits 0;
@@ -75,22 +67,18 @@ PWM 0 -6 0 10 -262144 -1 -1 0 256;
 #X restore 271 425 pd 16bits;
 #X msg 432 379 set -1;
 #X obj 404 443 == 0;
-#X obj 230 500 == 0;
+#X obj 388 511 == 0;
 #X obj 325 442 change -1;
 #X obj 388 425 change -1;
 #X obj 373 662 print;
-#X obj 238 61 bng 15 250 50 0 treuil\$1-rewind treuil\$1-rewind rewind
--5 -5 0 10 -257985 -1 -1;
-#X obj 238 88 bng 15 250 50 0 treuil\$1-stop treuil\$1-stop stop -5
--5 0 10 -258113 -1 -1;
-#X obj 577 635 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X floatatom 206 478 5 0 0 0 - - -;
+#X obj 238 61 bng 15 250 50 0 treuil\$1-rewind treuil\$1-rewind rewind -5 -5 0 10 #f8fc00 #000000 #000000;
+#X obj 238 88 bng 15 250 50 0 treuil\$1-stop treuil\$1-stop stop -5 -5 0 10 #fc0400 #000000 #000000;
+#X obj 577 635 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X floatatom 525 529 16 0 0 0 - - - 0;
 #X obj 271 400 unpack f f f f f f f f f, f 60;
-#X floatatom 632 426 5 0 0 0 - - -;
+#X floatatom 632 426 5 0 0 0 - - - 0;
 #X msg 112 720 L\$1;
-#X obj 103 698 tgl 16 0 empty empty empty 0 -8 0 10 -262144 -1 -1 0
-1;
+#X obj 103 698 tgl 16 0 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 29 142 fruit/fruit 1 treuil\$1 \$2 fwTreuil;
 #X obj 371 107 fruit/receive treuil\$1;
 #X obj 27 202 dcmotor/motor treuil\$1 120 motor;
@@ -107,7 +95,7 @@ PWM 0 -6 0 10 -262144 -1 -1 0 256;
 #X obj 448 445 s treuil\$1-pwm;
 #X obj 388 463 s treuil\$1-highswitch;
 #X obj 325 483 s treuil\$1-lowswitch;
-#X obj 271 499 s treuil\$1-pos;
+#X obj 271 545 s treuil\$1-pos;
 #X obj 618 63 sel 1;
 #X msg 683 110 0 \, 1;
 #X msg 683 131 homed \$1;
@@ -119,8 +107,7 @@ PWM 0 -6 0 10 -262144 -1 -1 0 256;
 #X obj 761 251 b;
 #X msg 761 360 0;
 #X msg 602 274 1;
-#X obj 802 372 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 802 372 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 618 20 r treuil\$1-lowswitch;
 #X obj 683 153 s treuil\$1-motor-params;
 #X obj 637 173 s treuil\$1-dest;
@@ -145,13 +132,19 @@ PWM 0 -6 0 10 -262144 -1 -1 0 256;
 #X msg 18 453 speed 9000 \, accel 32000 \, decel 32000;
 #X msg 28 358 speed 128 \, accel 128 \, decel 128;
 #X msg 802 402 666;
-#X floatatom 802 423 5 0 0 0 - - -;
-#X obj 784 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X floatatom 802 423 5 0 0 0 - - - 0;
+#X obj 784 57 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 784 87 666;
-#X floatatom 784 108 5 0 0 0 - - -;
-#X obj 271 462 / 16;
+#X floatatom 784 108 5 0 0 0 - - - 0;
+#X obj 271 519 / 16;
 #X msg 590 360 1023;
+#X obj 710 464 r treuil\$1-pos;
+#X obj 710 521 list prepend \$1;
+#X obj 710 544 s Treuils-position;
+#X obj 710 493 change;
+#X obj 271 448 moses 0;
+#X obj 271 471 + 65536;
+#X obj 271 494 f;
 #X connect 1 0 40 0;
 #X connect 3 0 45 0;
 #X connect 4 0 29 0;
@@ -165,7 +158,7 @@ PWM 0 -6 0 10 -262144 -1 -1 0 256;
 #X connect 16 0 47 0;
 #X connect 17 0 12 0;
 #X connect 18 0 17 0;
-#X connect 20 0 92 0;
+#X connect 20 0 98 0;
 #X connect 21 0 24 0;
 #X connect 21 0 25 0;
 #X connect 24 0 50 0;
@@ -222,4 +215,11 @@ PWM 0 -6 0 10 -262144 -1 -1 0 256;
 #X connect 90 0 91 0;
 #X connect 92 0 51 0;
 #X connect 93 0 73 0;
+#X connect 94 0 97 0;
+#X connect 95 0 96 0;
+#X connect 97 0 95 0;
+#X connect 98 0 99 0;
+#X connect 98 1 100 0;
+#X connect 99 0 100 0;
+#X connect 100 0 92 0;
 #X coords 0 -1 1 1 240 60 1 30 45;
