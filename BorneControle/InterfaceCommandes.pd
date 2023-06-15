@@ -1,4 +1,4 @@
-#N canvas 264 225 874 701 12;
+#N canvas 480 14 874 659 12;
 #X obj 14 16 fruit/fruit 1 Comm 12 Commandes;
 #X obj 102 273 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 246 296 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
@@ -27,7 +27,7 @@
 #X obj 113 477 change;
 #X obj 355 266 maxlib/scale 3800 8100 0.05 1;
 #X obj 54 192 maxlib/scale 4590 6800 0.05 1;
-#N canvas 752 340 357 365 analog 0;
+#N canvas 742 278 357 365 analog 0;
 #X obj 51 12 inlet;
 #X obj 113 303 outlet;
 #X obj 51 57 unwonk f;
@@ -77,6 +77,18 @@
 #X obj 667 219 pack f f, f 10;
 #X obj 734 186 * 300;
 #X obj 667 244 route 0 1 2;
+#X floatatom 243 63 5 0 0 0 - - - 0;
+#X obj 312 182 print;
+#X obj 569 464 fruit/receive Comm;
+#X obj 569 514 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
+#X obj 569 489 route present;
+#X obj 569 593 timer;
+#X obj 569 539 sel 1;
+#X floatatom 569 618 5 0 0 0 - - - 0;
+#X obj 569 564 t b b;
+#X msg 675 63 0 \$1 \, 1 \$1 \, 2 \$1;
+#X obj 675 90 s Commandes-lights;
+#X obj 665 33 hsl 170 20 0 1 0 0 empty empty empty -2 -10 0 12 #fcfcfc #000000 #000000 0 1;
 #X connect 1 0 25 0;
 #X connect 2 0 12 0;
 #X connect 3 0 14 0;
@@ -130,3 +142,12 @@
 #X connect 47 0 8 0;
 #X connect 47 1 42 0;
 #X connect 47 2 41 0;
+#X connect 50 0 52 0;
+#X connect 51 0 54 0;
+#X connect 52 0 51 0;
+#X connect 53 0 55 0;
+#X connect 54 0 56 0;
+#X connect 56 0 53 0;
+#X connect 56 1 53 1;
+#X connect 57 0 58 0;
+#X connect 59 0 57 0;
